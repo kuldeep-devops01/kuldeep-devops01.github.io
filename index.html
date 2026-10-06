@@ -1,485 +1,612 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kuldeep Singh Rathore | DevOps Lead · Platform & MLOps</title>
-<meta name="description" content="Kuldeep Singh Rathore is a DevOps lead and platform/MLOps engineer with 7+ years across AWS, Azure, Kubernetes and AI platforms, delivering for EY, Panasonic and Yondr.">
-<meta name="author" content="Kuldeep Singh Rathore">
-<meta name="theme-color" content="#0a0f1c">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kuldeep Singh Rathore | DevOps Lead · Platform & MLOps Engineer</title>
+<meta name="description" content="DevOps lead with 7+ years across AWS, Azure, GCP, Kubernetes and MLOps. Took EY's GST messaging platform to 820 TPS error-free. Open to remote roles, contracts and UAE.">
 <link rel="canonical" href="https://kuldeep.co.in/">
-<meta property="og:type" content="profile">
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://kuldeep.co.in/">
 <meta property="og:title" content="Kuldeep Singh Rathore | DevOps Lead · Platform & MLOps">
-<meta property="og:description" content="7+ years building cloud, Kubernetes and AI platforms for EY, Panasonic and Yondr. Open to remote roles and relocation to the UAE.">
+<meta property="og:description" content="7+ years turning fragile infrastructure into platforms teams can trust. Kubernetes, event streaming, MLOps and FinOps for EY, Panasonic and Yondr.">
 <meta property="og:image" content="https://kuldeep.co.in/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kuldeep Singh Rathore | DevOps Lead · Platform & MLOps">
-<meta name="twitter:description" content="7+ years building cloud, Kubernetes and AI platforms. Open to remote roles and the UAE.">
 <meta name="twitter:image" content="https://kuldeep.co.in/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0f1c'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='%235eead4' text-anchor='middle'%3EKR%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="inter.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#0a111c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a111c'/%3E%3Cpath d='M9 8v16M9 16l9-8M12.5 13l6.5 11' stroke='%23ffb547' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='24' cy='9' r='2.5' fill='%2342d392'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Kuldeep Singh Rathore","jobTitle":"DevOps Lead, Platform & MLOps Engineer","url":"https://kuldeep.co.in/","email":"mailto:rathorethechamp@gmail.com","address":{"@type":"PostalAddress","addressLocality":"New Delhi","addressCountry":"IN"},"worksFor":{"@type":"Organization","name":"CoreOps.ai"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Rajasthan Technical University"},"sameAs":["https://www.linkedin.com/in/kuldeep-devops/","https://github.com/kuldeep-devops01"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Certified Kubernetes Administrator (CKA)"},{"@type":"EducationalOccupationalCredential","name":"AWS Certified Solutions Architect – Associate"},{"@type":"EducationalOccupationalCredential","name":"Claude Certified Architect – Foundations"}]}
+{"@context":"https://schema.org","@type":"Person","name":"Kuldeep Singh Rathore","jobTitle":"DevOps Lead · Platform & MLOps Engineer","url":"https://kuldeep.co.in/","email":"mailto:rathorethechamp@gmail.com","address":{"@type":"PostalAddress","addressLocality":"New Delhi","addressCountry":"IN"},"worksFor":{"@type":"Organization","name":"CoreOps.ai"},"sameAs":["https://www.linkedin.com/in/kuldeep-devops/","https://github.com/kuldeep-devops01"],"knowsAbout":["Kubernetes","AWS","Azure","GCP","MLOps","Apache Pulsar","CI/CD","FinOps","Observability"]}
 </script>
 <style>
-@font-face{font-family:"Inter";src:url(inter.woff2) format("woff2");font-weight:100 900;font-display:swap}
-@font-face{font-family:"JBM";src:url(jbmono.woff2) format("woff2");font-weight:100 800;font-display:swap}
+/* Layout: an observability console for one engineer — status bar, live cluster hero, metric tiles, panels for incidents/changes, deploy log, cert expiry */
 :root{
-  --bg:#0a0f1c;--bg2:#0f172a;--card:rgba(30,41,59,.35);--line:rgba(148,163,184,.14);
-  --t1:#e2e8f0;--t2:#94a3b8;--t3:#64748b;--acc:#5eead4;--acc-bg:rgba(45,212,191,.1);--amb:#fbbf24;--red:#fb7185;
-  --mono:"JBM",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:dark;
+  --bg:#0a111c; --bg2:#0e1726; --panel:#111c2d; --panel2:#15223a; --line:#1f2e46; --line2:#2a3d5c;
+  --fg:#e7edf6; --muted:#8fa0b8; --dim:#5f7190;
+  --amber:#ffb547; --amber-d:#3a2a10; --cyan:#5cc8ff; --cyan-d:#0f2b40; --ok:#42d392; --ok-d:#0f3324; --red:#ff6b6b; --violet:#a78bfa;
+  --sans:"Geist", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"Geist Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+  --r:14px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--t2);font-family:"Inter",system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:#5eead4;color:#042f2e}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-.spot{pointer-events:none;position:fixed;inset:0;z-index:0;transition:background .2s}
-.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 60% at 20% 0%,#000 10%,transparent 70%);opacity:.45}
-.wrap{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 24px}
-@media(min-width:1024px){.wrap{display:flex;gap:64px;padding:0 64px}}
-/* ---- left rail ---- */
-.rail{padding:72px 0 32px}
-@media(min-width:1024px){.rail{position:sticky;top:0;height:100vh;width:46%;display:flex;flex-direction:column;justify-content:space-between;padding:96px 0}}
-.status{display:inline-flex;align-items:center;gap:8px;font:500 12.5px/1 var(--mono);color:var(--acc);background:var(--acc-bg);border:1px solid rgba(94,234,212,.25);padding:7px 12px;border-radius:999px;margin-bottom:24px}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 0 rgba(94,234,212,.7);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(94,234,212,0)}100%{box-shadow:0 0 0 0 rgba(94,234,212,0)}}
-h1{color:var(--t1);font-size:clamp(40px,5.2vw,56px);line-height:1.05;letter-spacing:-.035em;font-weight:750}
-h1 .grad{background:linear-gradient(90deg,#e2e8f0,#5eead4 70%,#38bdf8);-webkit-background-clip:text;background-clip:text;color:transparent}
-.role{color:var(--t1);font-size:19px;font-weight:550;margin-top:14px;letter-spacing:-.01em}
-.role .typed{color:var(--acc);font-family:var(--mono);font-size:16px;font-weight:500}
-.caret{display:inline-block;width:8px;height:17px;background:var(--acc);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.tag{max-width:400px;margin-top:16px;line-height:1.6}
-.nav{display:none;margin-top:56px}
-@media(min-width:1024px){.nav{display:block}}
-.nav a{display:flex;align-items:center;gap:16px;padding:9px 0;font:600 12px/1 "Inter";letter-spacing:.14em;text-transform:uppercase;color:var(--t3);transition:color .2s}
-.nav a .ln{height:1px;width:32px;background:var(--t3);transition:all .25s}
-.nav a:hover,.nav a.on{color:var(--t1)}
-.nav a:hover .ln,.nav a.on .ln{width:64px;background:var(--t1)}
-.soc{display:flex;align-items:center;gap:20px;margin-top:32px;flex-wrap:wrap}
-.soc a.ic{color:var(--t2);transition:color .2s,transform .2s}
-.soc a.ic:hover{color:var(--t1);transform:translateY(-2px)}
-.soc svg{width:22px;height:22px;display:block}
-.btn{display:inline-flex;align-items:center;gap:8px;font:600 13.5px/1 "Inter";padding:11px 16px;border-radius:8px;border:1px solid rgba(94,234,212,.45);color:var(--acc);transition:all .2s}
-.btn:hover{background:var(--acc-bg);transform:translateY(-1px)}
-.btn svg{width:15px;height:15px}
-.loc{font:500 12.5px/1.4 var(--mono);color:var(--t3);margin-top:20px}
-/* ---- main ---- */
-main{padding:24px 0 96px}
-@media(min-width:1024px){main{width:54%;padding:96px 0}}
-section{margin-bottom:112px;scroll-margin-top:96px}
-.sh{position:sticky;top:0;z-index:5;margin:0 -24px 24px;padding:18px 24px;background:rgba(10,15,28,.8);backdrop-filter:blur(10px);font:700 12.5px/1 "Inter";letter-spacing:.16em;text-transform:uppercase;color:var(--t1)}
-@media(min-width:1024px){.sh{position:static;background:none;backdrop-filter:none;padding:0;margin:0 0 28px;display:flex;align-items:center;gap:14px}.sh::after{content:"";flex:1;height:1px;background:var(--line)}}
-.sh .n{font-family:var(--mono);color:var(--acc);font-weight:500;margin-right:8px;letter-spacing:0}
-.about p{margin-bottom:16px}
-.about b{color:var(--t1);font-weight:600}
-.about a.u{color:var(--t1);font-weight:550;border-bottom:1px solid rgba(94,234,212,.5)}
-.about a.u:hover{color:var(--acc)}
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-@media(min-width:640px){.stats{grid-template-columns:repeat(3,1fr)}}
-.stat{background:var(--bg);padding:22px 20px;position:relative}
-.stat .v{font:700 32px/1 "Inter";color:var(--t1);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.stat .v small{font-size:17px;color:var(--acc);font-weight:600;margin-left:2px}
-.stat .k{font-size:13px;margin-top:8px;line-height:1.45}
-/* cards (experience + projects) */
-.list{list-style:none;display:flex;flex-direction:column;gap:12px}
-.list:hover .card{opacity:.5}
-.list .card:hover{opacity:1}
-.card{position:relative;display:grid;gap:8px;padding:20px;margin:0 -20px;border-radius:12px;border:1px solid transparent;transition:all .25s}
-.card:hover{background:var(--card);border-color:var(--line);box-shadow:inset 0 1px 0 rgba(148,163,184,.08),0 20px 40px -24px rgba(0,0,0,.6)}
-@media(min-width:640px){.card.exp{grid-template-columns:150px 1fr;gap:24px}}
-.when{font:600 11.5px/1.9 "Inter";letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
-.card h3{color:var(--t1);font-size:16.5px;font-weight:600;line-height:1.35}
-.card h3 .at{color:var(--t2);font-weight:500}
-.card h3 .arr{display:inline-block;transition:transform .2s;color:var(--acc);margin-left:4px}
-.card:hover h3{color:var(--acc)}
-.card:hover h3 .arr{transform:translate(3px,-3px)}
-.sub{font-size:13.5px;color:var(--t3);margin-top:2px}
-.card ul.pts{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:7px;font-size:14.5px}
-.card ul.pts li{padding-left:18px;position:relative}
-.card ul.pts li::before{content:"▹";position:absolute;left:0;color:var(--acc)}
-.card ul.pts b{color:var(--t1);font-weight:600}
-.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;list-style:none}
-.pills li{font:500 12px/1 "Inter";color:var(--acc);background:var(--acc-bg);padding:7px 11px;border-radius:999px}
-.stretch::after{content:"";position:absolute;inset:0;border-radius:12px}
-/* case study */
-.case{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,rgba(15,23,42,.9),rgba(10,15,28,.9));overflow:hidden}
-.case-top{padding:24px 24px 8px}
-.eyebrow{font:500 12px/1 var(--mono);color:var(--amb);letter-spacing:.02em}
-.case h3{color:var(--t1);font-size:22px;letter-spacing:-.02em;margin-top:10px;line-height:1.3}
-.case p{font-size:14.5px;margin-top:10px}
-.bars{padding:16px 24px 24px;display:flex;flex-direction:column;gap:14px}
-.bar .lbl{display:flex;justify-content:space-between;font:500 12.5px/1 var(--mono);margin-bottom:7px}
-.bar .lbl b{color:var(--t1);font-weight:600}
-.track{height:10px;background:rgba(148,163,184,.1);border-radius:99px;overflow:hidden}
-.fill{height:100%;width:0;border-radius:99px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
-.case-foot{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-.case-foot div{padding:16px 20px;border-right:1px solid var(--line);font-size:12.5px;line-height:1.4}
-.case-foot div:last-child{border-right:0}
-.case-foot b{display:block;color:var(--t1);font-size:18px;letter-spacing:-.02em;margin-bottom:4px}
-/* featured project */
-.feat{border:1px solid rgba(94,234,212,.25);border-radius:16px;overflow:hidden;background:radial-gradient(120% 80% at 100% 0%,rgba(45,212,191,.09),transparent 60%),var(--bg2);margin-bottom:28px}
-.feat-body{padding:24px}
-.feat .badge{display:inline-flex;gap:8px;align-items:center;font:500 11.5px/1 var(--mono);color:var(--amb);border:1px solid rgba(251,191,36,.35);padding:6px 10px;border-radius:6px}
-.feat h3{color:var(--t1);font-size:24px;letter-spacing:-.025em;margin-top:14px}
-.feat p{font-size:15px;margin-top:8px}
-.feat .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.term{margin:0 24px 24px;border-radius:10px;border:1px solid var(--line);background:#060a14;font:13px/1.7 var(--mono);overflow:hidden}
-.term-h{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid var(--line);background:rgba(148,163,184,.04)}
-.term-h i{width:10px;height:10px;border-radius:50%;background:#334155;display:block}
-.term-h span{margin-left:8px;font-size:11.5px;color:var(--t3)}
-.term pre{padding:14px 16px;min-height:252px;white-space:pre-wrap;color:#cbd5e1;overflow-x:auto}
-.term .c{color:var(--acc)}.term .y{color:var(--amb)}.term .r{color:var(--red)}.term .m{color:var(--t3)}.term .w{color:#f1f5f9;font-weight:600}
-.illus{padding:0 24px 18px;margin-top:-14px;font-size:11.5px;color:var(--t3)}
-.pgrid{display:grid;gap:12px}
-@media(min-width:640px){.pgrid{grid-template-columns:1fr 1fr}}
-.pc{position:relative;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--card);transition:all .25s;display:flex;flex-direction:column}
-.pc:hover{border-color:rgba(94,234,212,.35);transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(45,212,191,.35)}
-.pc .ico{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;background:var(--acc-bg);color:var(--acc);margin-bottom:14px}
-.pc .ico svg{width:20px;height:20px}
-.pc h4{color:var(--t1);font-size:16px;font-weight:600}
-.pc p{font-size:14px;margin-top:6px;flex:1}
-.pc .pills{margin-top:14px}
-.pc .pills li{background:none;border:1px solid var(--line);color:var(--t2);padding:6px 9px}
-/* github */
-.gh-head{display:flex;align-items:center;gap:14px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--card);margin-bottom:12px}
-.gh-head img{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:var(--bg2)}
-.gh-head .who{flex:1;min-width:0}
-.gh-head .who b{display:block;color:var(--t1);font-weight:600}
-.gh-head .who span{font:500 12.5px/1.4 var(--mono);color:var(--t3)}
-.repo{position:relative;display:block;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--card);transition:all .2s}
-.repo:hover{border-color:rgba(94,234,212,.35)}
-.repo .rn{display:flex;align-items:center;gap:8px;font:600 14.5px/1.3 var(--mono);color:var(--acc)}
-.repo .rn svg{width:16px;height:16px;color:var(--t3);flex:none}
-.repo .vis{font:500 11px/1 "Inter";color:var(--t3);border:1px solid var(--line);border-radius:99px;padding:4px 8px;margin-left:auto}
-.repo p{font-size:13.5px;margin-top:8px}
-.repo .meta{display:flex;gap:16px;margin-top:12px;font-size:12.5px;color:var(--t3)}
-.repo .meta .lang::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--lc,#e34c26);margin-right:6px;vertical-align:-1px}
-.repos{display:grid;gap:12px}
-@media(min-width:640px){.repos{grid-template-columns:1fr 1fr}}
-.gh-note{font-size:13px;color:var(--t3);margin-top:14px}
-/* skills */
-.stack{display:grid;gap:18px}
-.stack .row{display:grid;gap:8px}
-@media(min-width:640px){.stack .row{grid-template-columns:150px 1fr;gap:24px}}
-.stack .row dt{font:600 11.5px/2.2 "Inter";letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
-.stack .row .pills{margin-top:0}
-.stack .row .pills li{background:rgba(148,163,184,.08);color:var(--t1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(900px 500px at 85% -10%,rgba(92,200,255,.10),transparent 60%),radial-gradient(700px 500px at -10% 30%,rgba(255,181,71,.07),transparent 60%),
+  radial-gradient(circle,rgba(143,160,184,.13) 1px,transparent 1.3px) 0 0/28px 28px;mask-image:linear-gradient(#000,transparent 70%);-webkit-mask-image:linear-gradient(#000,transparent 70%)}
+a{color:inherit}
+::selection{background:var(--amber);color:#111}
+.mono{font-family:var(--mono)}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding-inline:20px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:20;background:rgba(10,17,28,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.bar .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.brand{font:500 14px var(--mono);text-decoration:none;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.brand b{color:var(--amber);font-weight:600}
+.brand span{color:var(--dim)}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{font:500 14px var(--sans);color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.nav a:hover{color:var(--fg);background:var(--panel)}
+.kbtn{font:500 12px var(--mono);color:var(--muted);background:var(--panel);border:1px solid var(--line2);border-radius:8px;padding:6px 10px;cursor:pointer;display:flex;gap:8px;align-items:center}
+.kbtn:hover{color:var(--fg)}
+.kbtn kbd{font:inherit;background:var(--bg);border:1px solid var(--line2);border-radius:4px;padding:0 5px}
+@media (max-width:820px){.nav{display:none}.kbtn{margin-left:auto}}
+
+/* status pill */
+.pill{display:inline-flex;align-items:center;gap:8px;font:500 12.5px var(--mono);color:var(--ok);background:var(--ok-d);border:1px solid rgba(66,211,146,.25);padding:5px 12px;border-radius:999px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(66,211,146,.6);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(66,211,146,.55)}70%{box-shadow:0 0 0 9px rgba(66,211,146,0)}100%{box-shadow:0 0 0 0 rgba(66,211,146,0)}}
+
+/* hero */
+.hero{padding-block:64px 36px;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.hero>*{min-width:0}
+.eyebrow{font:500 13px var(--mono);color:var(--amber);letter-spacing:.04em;text-transform:uppercase;margin:22px 0 10px}
+h1{font:800 clamp(44px,6.4vw,82px)/.98 var(--sans);letter-spacing:-.035em;margin:0;text-wrap:balance}
+h1 .soft{color:var(--muted);font-weight:700}
+.lede{font-size:clamp(19px,2vw,22px);line-height:1.45;color:var(--fg);margin:22px 0 0;max-width:34ch;text-wrap:balance}
+.lede em{font-style:normal;color:var(--amber)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:9px;font:600 15px var(--sans);text-decoration:none;padding:12px 18px;border-radius:10px;border:1px solid var(--line2);background:var(--panel);color:var(--fg);cursor:pointer;transition:transform .15s,border-color .15s,background .15s}
+.btn:hover{transform:translateY(-1px);border-color:var(--muted)}
+.btn.primary{background:var(--amber);color:#1a1205;border-color:var(--amber)}
+.btn.primary:hover{background:#ffc46c}
+.btn svg{width:17px;height:17px}
+.uptime{margin-top:30px;display:flex;flex-wrap:wrap;gap:6px 16px;font:13px var(--mono);color:var(--dim)}
+.uptime b{color:var(--fg);font-weight:500;font-variant-numeric:tabular-nums}
+
+.console{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:18px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.02) inset}
+.chead{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line);font:12.5px var(--mono);color:var(--muted)}
+.chead .lights{display:flex;gap:6px}.chead .lights i{width:10px;height:10px;border-radius:50%;background:var(--line2)}
+.chead .lights i:first-child{background:#ff6b6b99}.chead .lights i:nth-child(2){background:#ffb54799}.chead .lights i:nth-child(3){background:#42d39299}
+.chead .right{margin-left:auto;color:var(--ok)}
+#cluster{display:block;width:100%;height:330px}
+.cfoot{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.cfoot div{padding:12px 16px;font:12px var(--mono);color:var(--dim);border-right:1px solid var(--line)}
+.cfoot div:last-child{border-right:0}
+.cfoot b{display:block;font:600 18px var(--mono);color:var(--fg);font-variant-numeric:tabular-nums}
+@media (max-width:900px){.hero{grid-template-columns:1fr;padding-top:40px}#cluster{height:260px}}
+
+/* metric tiles */
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-block:26px 0}
+.tile{background:var(--bg2);padding:18px 18px 16px;min-width:0}
+.tile b{display:block;font:600 clamp(24px,2.6vw,32px)/1.1 var(--mono);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tile b small{font-size:.55em;color:var(--muted);font-weight:500;margin-left:2px}
+.tile span{display:block;font-size:13px;color:var(--muted);margin-top:6px;line-height:1.35}
+.tile i{font-style:normal;font:11px var(--mono);color:var(--dim);display:block;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+@media (max-width:980px){.tiles{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.tiles{grid-template-columns:repeat(2,1fr)}}
+
+/* sections */
+section{padding-block:84px 0}
+.shead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin-bottom:28px}
+.shead .path{font:500 13px var(--mono);color:var(--amber)}
+h2{font:700 clamp(28px,3.6vw,42px)/1.1 var(--sans);letter-spacing:-.025em;margin:0;text-wrap:balance;width:100%}
+.shead p{color:var(--muted);margin:4px 0 0;max-width:62ch}
+
+/* about */
+.about{display:grid;grid-template-columns:1.3fr .9fr;gap:28px}
+.about>*{min-width:0}
+.readme{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:28px 30px}
+.readme p{margin:0 0 16px;font-size:17.5px;line-height:1.7;max-width:64ch}
+.readme p:last-child{margin:0}
+.readme a{color:var(--cyan);text-decoration:none;border-bottom:1px solid rgba(92,200,255,.35)}
+.facts{display:grid;gap:10px;align-content:start}
+.fact{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;font-size:14.5px}
+.fact span{color:var(--muted)}
+.fact b{font-weight:500;text-align:right}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+
+/* featured case */
+.feature{display:grid;grid-template-columns:1fr 1.1fr;gap:0;background:var(--panel);border:1px solid var(--line2);border-radius:18px;overflow:hidden}
+.feature>*{min-width:0}
+.ftext{padding:34px 34px 30px;border-right:1px solid var(--line)}
+.tag{display:inline-flex;gap:8px;align-items:center;font:500 12px var(--mono);color:var(--cyan);background:var(--cyan-d);border-radius:6px;padding:3px 9px}
+.ftext h3{font:700 28px/1.15 var(--sans);letter-spacing:-.02em;margin:14px 0 12px;text-wrap:balance}
+.ftext p{color:var(--muted);margin:0 0 18px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.steps li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:15px}
+.steps li::before{content:"";width:8px;height:8px;margin:8px 0 0 6px;border-radius:2px;background:var(--amber)}
+.fchart{padding:28px 30px;display:flex;flex-direction:column;justify-content:center;gap:22px;background:linear-gradient(180deg,rgba(92,200,255,.04),transparent)}
+.fchart .ttl{display:flex;justify-content:space-between;font:12.5px var(--mono);color:var(--muted)}
+.bars{display:grid;gap:14px}
+.brow{display:grid;grid-template-columns:132px 1fr 70px;align-items:center;gap:12px;font:13px var(--mono)}
+.brow span{color:var(--muted)}
+.brow .track{height:26px;background:var(--bg);border-radius:6px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.brow .fill{position:absolute;inset:0 auto 0 0;width:0;border-radius:5px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.brow b{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.f-peak{background:var(--dim)}.f-before{background:linear-gradient(90deg,#2b5f86,var(--cyan))}.f-after{background:linear-gradient(90deg,#b86f10,var(--amber))}
+.ratio{display:flex;flex-wrap:wrap;gap:10px}
+.chip2{flex:1;min-width:140px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.chip2 b{display:block;font:600 22px var(--mono)}
+.chip2 span{font-size:12.5px;color:var(--muted)}
+.chip2 .strike{color:var(--red);text-decoration:line-through;text-decoration-thickness:2px;margin-right:6px;font-size:.8em}
+.next{font:12.5px var(--mono);color:var(--dim);border-top:1px dashed var(--line2);padding-top:14px}
+.next b{color:var(--violet);font-weight:500}
+@media (max-width:600px){.ftext{padding:24px 20px}.fchart{padding:22px 20px}.ftext h3{font-size:24px}.chead .cl{display:none}.readme{padding:22px 20px}.term .body{padding:18px 16px;font-size:13px}}
+@media (max-width:900px){.feature{grid-template-columns:1fr}.ftext{border-right:0;border-bottom:1px solid var(--line)}.brow{grid-template-columns:100px 1fr 58px}}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--line2);transform:translateY(-2px)}
+.card .meta{display:flex;justify-content:space-between;gap:8px;font:12px var(--mono);color:var(--dim)}
+.card .id{color:var(--amber)}
+.card .id.inc{color:var(--red)}
+.card .id.ml{color:var(--violet)}
+.card h3{font:650 19px/1.3 var(--sans);margin:0;letter-spacing:-.01em}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card .out{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font:13px var(--mono);color:var(--ok)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font:12px var(--mono);color:var(--muted);background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+@media (max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.cards{grid-template-columns:1fr}}
+
+/* partners */
+.partners{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pcard{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-width:0}
+.pcard h3{font:650 17px var(--sans);margin:0 0 4px}
+.pcard .role{font:12px var(--mono);color:var(--amber);margin-bottom:10px}
+.pcard p{margin:0;color:var(--muted);font-size:14.5px}
+@media (max-width:980px){.partners{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.partners{grid-template-columns:1fr}}
+
+/* deploy log */
+.log{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.lhead{display:flex;gap:10px;align-items:center;padding:12px 18px;border-bottom:1px solid var(--line);font:12.5px var(--mono);color:var(--muted);flex-wrap:wrap}
+.lhead b{color:var(--fg);font-weight:500}
+.entry{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:26px 22px;border-bottom:1px solid var(--line);position:relative}
+.entry:last-child{border-bottom:0}
+.entry>*{min-width:0}
+.when{font:13px var(--mono);color:var(--muted)}
+.when .ver{display:inline-block;color:var(--bg);background:var(--amber);border-radius:5px;padding:1px 8px;font-weight:600;margin-bottom:8px}
+.when .ver.old{background:var(--line2);color:var(--fg)}
+.when .hash{display:block;color:var(--dim);margin-top:6px}
+.entry h3{font:650 20px/1.3 var(--sans);margin:0;letter-spacing:-.01em}
+.entry .org{color:var(--muted);margin:2px 0 12px;font-size:15px}
+.entry ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.entry li{position:relative;padding-left:20px;font-size:15px;color:#c9d4e3}
+.entry li::before{content:"+";position:absolute;left:0;font:600 14px var(--mono);color:var(--ok)}
+@media (max-width:720px){.entry{grid-template-columns:1fr;gap:10px}}
+
+/* stack */
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.svc{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:18px;min-width:0}
+.svc h3{display:flex;align-items:center;gap:8px;font:600 13px var(--mono);color:var(--fg);margin:0 0 12px;text-transform:uppercase;letter-spacing:.05em}
+.svc h3::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.svc .chips span{font-size:12.5px;color:#c9d4e3}
+@media (max-width:980px){.stack{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.stack{grid-template-columns:1fr}}
+
 /* certs */
-.certs{display:grid;gap:10px}
-@media(min-width:640px){.certs{grid-template-columns:1fr 1fr}}
-.cert{display:flex;gap:14px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--card);transition:border-color .2s}
-.cert:hover{border-color:rgba(94,234,212,.35)}
-.cert .sq{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font:700 13px/1 "Inter";flex:none}
-.cert b{display:block;color:var(--t1);font-size:14.5px;font-weight:600;line-height:1.35}
-.cert span{font-size:12.5px;color:var(--t3)}
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cert{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;font:13px/1.7 var(--mono);color:var(--muted);min-width:0;position:relative;overflow:hidden}
+.cert .k{color:var(--dim)}
+.cert .v{color:var(--fg)}
+.cert h3{font:650 17px/1.3 var(--sans);color:var(--fg);margin:0 0 10px;padding-right:56px}
+.cert .lock{position:absolute;top:18px;right:18px;font:600 11px var(--mono);color:var(--ok);background:var(--ok-d);border-radius:5px;padding:2px 7px}
+.cert .ttl{height:4px;background:var(--bg);border-radius:3px;margin-top:12px;overflow:hidden}
+.cert .ttl i{display:block;height:100%;background:linear-gradient(90deg,var(--ok),var(--cyan))}
+.cert .left{margin-top:6px;font-size:12px}
+@media (max-width:980px){.certs{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.certs{grid-template-columns:1fr}}
+
 /* contact */
-.contact{padding:36px 28px;border:1px solid var(--line);border-radius:18px;background:radial-gradient(90% 120% at 0% 100%,rgba(45,212,191,.1),transparent 60%),var(--bg2);text-align:left}
-.contact h2{color:var(--t1);font-size:clamp(26px,3.4vw,34px);letter-spacing:-.03em;line-height:1.15}
-.contact p{margin-top:12px;max-width:520px}
-.contact .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.btn.solid{background:var(--acc);color:#042f2e;border-color:var(--acc)}
-.btn.solid:hover{background:#99f6e4}
-footer{font-size:13px;color:var(--t3);margin-top:48px;max-width:460px}
-footer a{color:var(--t2);font-weight:550}
-footer a:hover{color:var(--acc)}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);background:var(--acc);color:#042f2e;font-weight:600;font-size:14px;padding:10px 16px;border-radius:8px;opacity:0;transition:all .3s;z-index:50}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.contact>*{min-width:0}
+.ctext h2{margin-bottom:14px}
+.ctext p{color:var(--muted);font-size:17px;max-width:46ch}
+.avail{display:grid;gap:10px;margin-top:22px}
+.avail div{display:flex;gap:12px;align-items:center;font-size:15.5px}
+.avail div::before{content:"✓";font:600 13px var(--mono);color:var(--ok);background:var(--ok-d);width:22px;height:22px;display:grid;place-items:center;border-radius:6px;flex:none}
+.term{background:#060b13;border:1px solid var(--line2);border-radius:16px;overflow:hidden;font:14px/1.75 var(--mono)}
+.term .body{padding:20px 22px;min-height:290px;overflow-x:auto}
+.term .p{color:var(--ok)}.term .c{color:var(--fg)}.term .o{color:var(--muted)}.term .h{color:var(--amber)}
+.term .body a{color:var(--cyan);text-decoration:none}
+.term a:hover{text-decoration:underline}
+.cursor{display:inline-block;width:9px;height:17px;background:var(--fg);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.tactions{display:flex;flex-wrap:wrap;gap:10px;padding:0 22px 20px}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+
+footer{padding-block:80px 40px;color:var(--dim);font:13px var(--mono)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:24px}
+footer a{color:var(--muted);text-decoration:none}
+
+/* palette */
+.pal{position:fixed;inset:0;z-index:50;background:rgba(3,7,13,.6);backdrop-filter:blur(4px);display:grid;place-items:start center;padding:12vh 16px 16px}
+.pal[hidden]{display:none}
+.pbox{width:min(560px,100%);background:var(--panel);border:1px solid var(--line2);border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden}
+.pbox input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:16px 18px;font:15px var(--mono);color:var(--fg);outline:none}
+.plist{max-height:340px;overflow:auto;padding:6px}
+.pitem{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:8px;cursor:pointer;font-size:15px}
+.pitem span{color:var(--dim);font:12px var(--mono)}
+.pitem[aria-selected="true"]{background:var(--panel2);color:var(--amber)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);opacity:0;background:var(--ok);color:#06210f;font:600 14px var(--sans);padding:10px 16px;border-radius:10px;z-index:60;transition:.25s;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.reveal{opacity:1;transform:none;transition:opacity .7s,transform .7s}
+.js .reveal.pre{opacity:.001;transform:translateY(14px)}
 </style>
 </head>
 <body>
-<div class="grid-bg"></div>
-<div class="spot" id="spot"></div>
-<div class="wrap">
 
-<header class="rail">
-  <div>
-    <div class="status"><span class="dot"></span>Open to remote roles · India / UAE</div>
-    <h1><span class="grad">Kuldeep Singh Rathore</span></h1>
-    <div class="role">DevOps Lead · <span class="typed" id="typed">platform engineering</span><span class="caret"></span></div>
-    <p class="tag">I build the platforms that keep AI and enterprise systems fast, cost-efficient and boring to run — from Kubernetes streaming at 820 TPS to MLOps pipelines and cloud cost scanners.</p>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Kuldeep Singh Rathore, home"><b>kuldeep</b><span>@prod:~$</span></a>
     <nav class="nav" aria-label="Sections">
-      <a href="#about"><span class="ln"></span>About</a>
-      <a href="#experience"><span class="ln"></span>Experience</a>
-      <a href="#case"><span class="ln"></span>Case study</a>
-      <a href="#projects"><span class="ln"></span>Projects</a>
-      <a href="#github"><span class="ln"></span>GitHub</a>
-      <a href="#certs"><span class="ln"></span>Certifications</a>
-      <a href="#contact"><span class="ln"></span>Contact</a>
+      <a href="#work">Work</a><a href="#log">Experience</a><a href="#stack">Stack</a><a href="#certs">Certs</a><a href="#contact">Contact</a>
     </nav>
-  </div>
-  <div>
-    <div class="soc">
-      <a class="ic" href="https://github.com/kuldeep-devops01" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
-      <a class="ic" href="https://www.linkedin.com/in/kuldeep-devops/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-      <a class="ic" href="mailto:rathorethechamp@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
-      <a class="btn" href="Kuldeep_Singh_Rathore_Resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Résumé</a>
-    </div>
-    <div class="loc">~/new-delhi · IST (UTC+5:30) · <span id="clock"></span></div>
+    <button class="kbtn" id="openPal" aria-label="Open command menu"><span>Jump to</span><kbd>Ctrl K</kbd></button>
   </div>
 </header>
 
-<main>
-  <section id="about" class="about">
-    <h2 class="sh"><span><span class="n">01.</span>About</span></h2>
-    <p>I'm a DevOps lead with <b>7+ years</b> of turning fragile infrastructure into platforms teams can trust. Today I lead DevOps at <a class="u" href="https://coreops.ai" target="_blank" rel="noopener">CoreOps.ai</a>, where I run production platforms for enterprise clients like <b>EY</b>, <b>Panasonic</b> and <b>NM India</b>, own our multi-cloud cost governance, and sit on the pre-sales team shaping RFPs and architectures before a line of code is written.</p>
-    <p>My sweet spot is where <b>infrastructure meets AI</b>: Kubernetes and event streaming at scale, MLOps pipelines for GPU workloads, and the FinOps tooling that keeps all of it affordable. I've also been the person on call when things break — including leading incident response on a compromised UAT environment.</p>
-    <p>Outside the day job I freelance with <b>Varintel</b>, building products like an AWS FinOps scanner, and I'm certified across <b>Kubernetes (CKA)</b>, <b>AWS</b>, <b>Red Hat</b> and <b>Claude</b>.</p>
-    <div class="stats reveal" style="margin-top:32px">
-      <div class="stat"><div class="v"><span data-count="820">0</span><small>TPS</small></div><div class="k">Pulsar throughput on AKS for EY DigiGST 2.0, zero errors</div></div>
-      <div class="stat"><div class="v"><span data-count="100">0</span><small>%→0</small></div><div class="k">Consumer failure rate eliminated under load</div></div>
-      <div class="stat"><div class="v"><span data-count="99.9" data-dec="1">0</span><small>%</small></div><div class="k">Platform uptime on Yondr's DCIM platform</div></div>
-      <div class="stat"><div class="v"><span data-count="80">0</span><small>%</small></div><div class="k">Less manual ML work via LifeSafety.AI MLOps pipelines</div></div>
-      <div class="stat"><div class="v"><span data-count="500">0</span><small>+</small></div><div class="k">Vulnerabilities remediated during SOC 2 readiness</div></div>
-      <div class="stat"><div class="v"><span data-count="7">0</span><small>yrs</small></div><div class="k">Across AWS, Azure, Kubernetes and AI platforms</div></div>
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <span class="pill"><i class="dot"></i>Available · remote roles, contracts, UAE</span>
+      <p class="eyebrow">DevOps Lead · Platform &amp; MLOps</p>
+      <h1>Kuldeep Singh<br><span class="soft">Rathore</span></h1>
+      <p class="lede">I turn fragile infrastructure into <em>platforms teams can trust</em>, from Kubernetes and event streaming to GPU MLOps and cloud cost.</p>
+      <div class="ctas">
+        <a class="btn primary" href="Kuldeep_Singh_Rathore_Resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Download résumé</a>
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn" href="https://www.linkedin.com/in/kuldeep-devops/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9z"/></svg>LinkedIn</a>
+      </div>
+      <div class="uptime"><span>career uptime <b id="uptime">7y 4m</b></span><span>since <b>2019-06</b></span><span>based <b>New Delhi, IN</b></span></div>
+    </div>
+
+    <div class="console" aria-label="Animated illustration of a Kubernetes cluster handling traffic">
+      <div class="chead"><span class="lights"><i></i><i></i><i></i></span><span>cluster/kuldeep-prod<span class="cl"> · aws · azure · gcp</span></span><span class="right">● healthy</span></div>
+      <canvas id="cluster" aria-hidden="true"></canvas>
+      <div class="cfoot">
+        <div><b>820</b>TPS error-free</div>
+        <div><b>21×</b>expected peak</div>
+        <div><b>0%</b>consumer errors</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tiles reveal">
+    <div class="tile"><b>7<small>+ yrs</small></b><span>DevOps, cloud &amp; MLOps</span><i>since 2019</i></div>
+    <div class="tile"><b>820<small>TPS</small></b><span>Error-free on EY's GST platform</span><i>from ~450</i></div>
+    <div class="tile"><b>100→0<small>%</small></b><span>Consumer API failures after tuning</span><i>EY DigiGST</i></div>
+    <div class="tile"><b>−80<small>%</small></b><span>Manual work in ML deployment</span><i>LifeSafety.AI</i></div>
+    <div class="tile"><b>99.9<small>%</small></b><span>Uptime held on a DCIM platform</span><i>Yondr</i></div>
+    <div class="tile"><b>500<small>+</small></b><span>Vulnerabilities fixed for SOC 2</span><i>Global IT</i></div>
+  </div>
+
+  <section id="about">
+    <div class="shead reveal"><span class="path">~/README.md</span><h2>Infrastructure is a product. I build it like one.</h2></div>
+    <div class="about">
+      <div class="readme reveal">
+        <p>I'm a DevOps lead with 7+ years of turning fragile infrastructure into platforms teams can trust. Today I lead DevOps at <a href="https://coreops.ai" target="_blank" rel="noopener">CoreOps.ai</a>, where I run production platforms for enterprise clients like EY, Panasonic and NM India, own our multi-cloud cost governance, and sit on the pre-sales team shaping RFPs and architectures before a line of code is written.</p>
+        <p>My sweet spot is where infrastructure meets AI: Kubernetes and event streaming at scale, MLOps pipelines for GPU workloads, and the FinOps work that keeps all of it affordable. I've also been the person on call when things break, including leading incident response on a compromised UAT environment.</p>
+        <p>I'm the technical lead for CoreOps.ai's AWS, Red Hat and SUSE partnerships, and I'm certified across Kubernetes (CKA), AWS and Anthropic's Claude.</p>
+      </div>
+      <div class="facts reveal">
+        <div class="fact"><span>Role</span><b>DevOps Team Lead, CoreOps.ai</b></div>
+        <div class="fact"><span>Clouds</span><b>AWS · Azure · GCP</b></div>
+        <div class="fact"><span>Focus</span><b>Kubernetes, MLOps, FinOps</b></div>
+        <div class="fact"><span>Clients</span><b>EY · Panasonic · NM India · Yondr</b></div>
+        <div class="fact"><span>Looking for</span><b>Remote · Contract · UAE</b></div>
+        <div class="fact"><span>Notice period</span><b>1 month</b></div>
+      </div>
     </div>
   </section>
 
-  <section id="experience">
-    <h2 class="sh"><span><span class="n">02.</span>Experience</span></h2>
-    <ol class="list">
-      <li class="card exp reveal">
-        <div class="when">Nov 2024 — Now</div>
-        <div>
-          <h3>DevOps Team Lead · Senior DevOps & MLOps <span class="at">· CoreOps.ai</span></h3>
-          <div class="sub">Noida · Enterprise AI & cloud platforms</div>
-          <ul class="pts">
-            <li><b>EY DigiGST 2.0:</b> re-architected Apache Pulsar on AKS from a 37.75 TPS peak to <b>820 TPS with zero errors</b>; sized node pools for a 5,000 TPS target.</li>
-            <li><b>Panasonic:</b> ran AX modernisation — mirror servers, NBFC integrations, DB parity, ADF migration and a two-account AWS FinOps assessment.</li>
-            <li><b>NM India:</b> project-managed N-Gage hosting and authored the Phase-1 Data Foundation & BI proposal.</li>
-            <li>Built the <b>AgentCORE</b> MLOps platform, own multi-cloud cost governance, M365 administration and tenant migration.</li>
-            <li>Pre-sales: RFPs, bids and solution architecture; partner relationships with AWS, Oracle and Red Hat.</li>
-          </ul>
-          <ul class="pills"><li>AKS</li><li>Apache Pulsar</li><li>AWS</li><li>Azure Data Factory</li><li>Terraform</li><li>MLOps</li><li>FinOps</li></ul>
-        </div>
-      </li>
-      <li class="card exp reveal">
-        <div class="when">May 2022 — Nov 2024</div>
-        <div>
-          <h3>Platform DevOps & MLOps Engineer <span class="at">· Podtech India</span></h3>
-          <div class="sub">Gurgaon · Clients: LifeSafety.AI, Yondr (hyperscale data centres)</div>
-          <ul class="pts">
-            <li><b>LifeSafety.AI:</b> built MLOps pipelines that cut manual ML work by <b>80%</b> and lifted GPU training efficiency by <b>25%</b>.</li>
-            <li><b>Yondr DCIM:</b> Azure DevOps CI/CD <b>+40%</b> faster delivery, Docker cut deploys <b>50%</b>, <b>99.9%</b> uptime and <b>30%</b> less downtime.</li>
-            <li>Introduced SonarQube quality gates, reducing technical debt by <b>20%</b>.</li>
-          </ul>
-          <ul class="pills"><li>Azure DevOps</li><li>Docker</li><li>Kubernetes</li><li>GPU / ML pipelines</li><li>SonarQube</li></ul>
-        </div>
-      </li>
-      <li class="card exp reveal">
-        <div class="when">Jun 2019 — May 2022</div>
-        <div>
-          <h3>DevOps & Cloud Engineer <span class="at">· Global IT Providers</span></h3>
-          <div class="sub">Jaipur</div>
-          <ul class="pts">
-            <li>Led <b>SOC 2</b> readiness work and remediated <b>500+</b> vulnerabilities.</li>
-            <li>Designed and operated AWS infrastructure, CI/CD and monitoring for client workloads.</li>
-          </ul>
-          <ul class="pills"><li>AWS</li><li>Linux</li><li>CI/CD</li><li>Security & compliance</li></ul>
-        </div>
-      </li>
-      <li class="card exp reveal">
-        <div class="when">Freelance</div>
-        <div>
-          <h3>Cloud & FinOps Engineer <span class="at">· Varintel</span></h3>
-          <div class="sub">Remote</div>
-          <ul class="pts"><li>Built an <b>AWS FinOps scanner</b> that audits accounts for waste and turns findings into a savings report (see Projects).</li></ul>
-          <ul class="pills"><li>AWS</li><li>Python</li><li>FinOps</li></ul>
-        </div>
-      </li>
-    </ol>
-    <a class="btn" href="Kuldeep_Singh_Rathore_Resume.pdf" target="_blank" rel="noopener" style="margin-top:28px">View full résumé ↗</a>
-  </section>
+  <section id="work">
+    <div class="shead reveal"><span class="path">~/work --featured</span><h2>Selected work</h2><p>Changes shipped and incidents closed, written the way I'd write them up for a team.</p></div>
 
-  <section id="case">
-    <h2 class="sh"><span><span class="n">03.</span>Case study</span></h2>
-    <article class="case reveal">
-      <div class="case-top">
-        <div class="eyebrow">// EY · DigiGST 2.0 · Apache Pulsar on AKS</div>
-        <h3>From 37.75 TPS and failing consumers to 820 TPS with zero errors</h3>
-        <p>GST filings arrive in huge bursts around deadlines. The streaming layer was topping out below 40 transactions per second and every consumer was failing under load. I rebuilt the Pulsar topology, tuned brokers, bookies and consumers, and re-sized AKS node pools — then load-tested it step by step to 820 TPS with a clean error log.</p>
+    <article class="feature reveal">
+      <div class="ftext">
+        <span class="tag">CHG-EY-01 · Azure AKS · Apache Pulsar</span>
+        <h3>EY DigiGST 2.0: a GST messaging platform tuned to 21× its expected peak</h3>
+        <p>EY's GST compliance platform has to survive filing-deadline bursts. I designed the Apache Pulsar platform on AKS and tuned it through EY's performance testing.</p>
+        <ul class="steps">
+          <li>Built Pulsar on AKS with Helm, ZooKeeper StatefulSets, cert-manager TLS, JWT auth and automated sinks.</li>
+          <li>Right-sized CPU and memory requests so autoscaled pods actually took traffic.</li>
+          <li>Traced node CPU saturation in Grafana to Pulsar and the app sharing one node pool.</li>
+          <li>Proposed dedicated AKS node pools as the path to a 5,000 TPS target.</li>
+        </ul>
       </div>
-      <div class="bars" id="bars">
-        <div class="bar"><div class="lbl"><span>Before · peak</span><b>37.75 TPS</b></div><div class="track"><div class="fill" data-w="4.6" style="background:var(--red)"></div></div></div>
-        <div class="bar"><div class="lbl"><span>After · first run</span><b>450 TPS</b></div><div class="track"><div class="fill" data-w="54.9" style="background:#38bdf8"></div></div></div>
-        <div class="bar"><div class="lbl"><span>After · tuned, 0 errors</span><b>820 TPS</b></div><div class="track"><div class="fill" data-w="100" style="background:var(--acc)"></div></div></div>
-      </div>
-      <div class="case-foot">
-        <div><b>21×</b>throughput</div>
-        <div><b>100% → 0</b>consumer failures</div>
-        <div><b>5,000</b>TPS target sized</div>
+      <div class="fchart">
+        <div class="ttl"><span>AMS throughput, error-free (TPS)</span><span>EY load tests</span></div>
+        <div class="bars" id="bars">
+          <div class="brow"><span>Expected peak</span><div class="track"><div class="fill f-peak" data-v="37.75"></div></div><b>37.75</b></div>
+          <div class="brow"><span>Before tuning</span><div class="track"><div class="fill f-before" data-v="450"></div></div><b>~450</b></div>
+          <div class="brow"><span>After tuning</span><div class="track"><div class="fill f-after" data-v="820"></div></div><b>820</b></div>
+        </div>
+        <div class="ratio">
+          <div class="chip2"><b><span class="strike">100%</span>0%</b><span>Consumer API failures</span></div>
+          <div class="chip2"><b>21.7×</b><span>Headroom over expected peak</span></div>
+        </div>
+        <div class="next">next → <b>5,000 TPS</b> with dedicated node pools for Pulsar and AMS</div>
       </div>
     </article>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="meta"><span class="id ml">PLT-AGENTCORE</span><span>CoreOps.ai</span></div>
+        <h3>AgentCORE: an MLOps platform for AI agents</h3>
+        <p>Designed, built and launched the company's platform to build, train, deploy and monitor AI agents across staging, UAT and production.</p>
+        <div class="chips"><span>Jenkins</span><span>SonarQube</span><span>Prometheus</span><span>Grafana</span></div>
+        <div class="out">✓ shipped to production</div>
+      </article>
+      <article class="card reveal">
+        <div class="meta"><span class="id">CHG-PANASONIC</span><span>Panasonic Life Solutions</span></div>
+        <h3>ERP (AX) modernisation and cutover</h3>
+        <p>Mirror servers and API mapping, NBFC partner integrations, database parity and an Azure Data Factory migration run in overnight change windows.</p>
+        <div class="chips"><span>Nginx</span><span>Azure Data Factory</span><span>CyberArk</span><span>ITSM</span></div>
+        <div class="out">✓ cutover tested against SAP, Salesforce</div>
+      </article>
+      <article class="card reveal">
+        <div class="meta"><span class="id">FIN-3CLOUD</span><span>Panasonic · CoreOps.ai</span></div>
+        <h3>FinOps across AWS, Azure and GCP</h3>
+        <p>Ran a two-account AWS FinOps assessment with workshops, and govern CoreOps.ai's own spend: guardrails, rightsizing, decommissioning and a billing waiver.</p>
+        <div class="chips"><span>Savings Plans</span><span>Rightsizing</span><span>Budgets</span></div>
+        <div class="out">✓ cost governance across 3 clouds</div>
+      </article>
+      <article class="card reveal">
+        <div class="meta"><span class="id ml">ML-LIFESAFETY</span><span>Podtech</span></div>
+        <h3>LifeSafety.AI: machine learning into production</h3>
+        <p>Architected the MLOps infrastructure, automated image processing and model deployment, and ran NVIDIA multi-GPU training servers.</p>
+        <div class="chips"><span>Jenkins</span><span>NVIDIA GPUs</span><span>Prometheus</span></div>
+        <div class="out">✓ −80% manual work · +25% faster training</div>
+      </article>
+      <article class="card reveal">
+        <div class="meta"><span class="id">CHG-YONDR</span><span>Podtech · Yondr</span></div>
+        <h3>Yondr DCIM: CI/CD and containers</h3>
+        <p>Moved pipelines from Bitbucket and Jenkins to Azure DevOps, containerised legacy apps and built monitoring for hyperscale data-centre software.</p>
+        <div class="chips"><span>Azure DevOps</span><span>Docker</span><span>PRTG</span><span>Grafana</span></div>
+        <div class="out">✓ 40% faster CI/CD · 99.9% uptime</div>
+      </article>
+      <article class="card reveal">
+        <div class="meta"><span class="id inc">INC-UAT-SEC</span><span>CoreOps.ai</span></div>
+        <h3>Incident response: compromised UAT server</h3>
+        <p>Led the response end to end: forensic root-cause analysis, rebuild from a hardened production clone, and vendor remediation.</p>
+        <div class="chips"><span>Forensics</span><span>RCA</span><span>Hardening</span></div>
+        <div class="out">✓ resolved · postmortem delivered</div>
+      </article>
+    </div>
   </section>
 
-  <section id="projects">
-    <h2 class="sh"><span><span class="n">04.</span>Projects</span></h2>
+  <section id="partners">
+    <div class="shead reveal"><span class="path">~/alliances</span><h2>Pre-sales and cloud partnerships</h2><p>I'm the technical side of how CoreOps.ai wins and scopes work.</p></div>
+    <div class="partners">
+      <div class="pcard reveal"><h3>AWS</h3><div class="role">technical lead</div><p>Partner Central opportunities, landing-zone designs and partner-tier requirements; driving team certifications.</p></div>
+      <div class="pcard reveal"><h3>Red Hat</h3><div class="role">technical lead</div><p>OpenShift and OpenShift Virtualization deal registrations; Ready-tier partner.</p></div>
+      <div class="pcard reveal"><h3>SUSE</h3><div class="role">technical lead</div><p>Partner onboarding and tier planning for new infrastructure offerings.</p></div>
+      <div class="pcard reveal"><h3>RFPs &amp; bids</h3><div class="role">pre-sales</div><p>Cloud sizing, solution architecture and technical compliance for government and enterprise bids.</p></div>
+    </div>
+  </section>
 
-    <article class="feat reveal">
-      <div class="feat-body">
-        <span class="badge">★ Featured · Built at Varintel</span>
-        <h3>AWS FinOps Scanner</h3>
-        <p>A cost-hygiene scanner that sweeps AWS accounts across regions for idle, orphaned and oversized resources, estimates what each finding costs per month, and turns the result into a prioritised savings report that finance and engineering can both read.</p>
-        <ul class="pills"><li>Python</li><li>AWS SDK (boto3)</li><li>Cost Explorer</li><li>Multi-account</li><li>FinOps</li></ul>
-        <div class="links">
-          <a class="btn" href="https://finops.kuldeep.co.in" target="_blank" rel="noopener">Live demo · finops.kuldeep.co.in ↗</a>
+  <section id="log">
+    <div class="shead reveal"><span class="path">~/git log --career</span><h2>Experience</h2></div>
+    <div class="log reveal">
+      <div class="lhead"><span>branch</span><b>main</b><span>·</span><span>3 releases · 7+ years</span></div>
+      <div class="entry">
+        <div class="when"><span class="ver">v3 · HEAD</span><br>Dec 2024 → now<span class="hash">Noida · hybrid</span></div>
+        <div>
+          <h3>DevOps Team Lead · Senior DevOps &amp; MLOps Engineer</h3>
+          <div class="org">CoreOps.ai</div>
+          <ul>
+            <li>Lead the DevOps team: assign and review work, report weekly to leadership, interview and hire.</li>
+            <li>Production platforms for EY (DigiGST 2.0), Panasonic (AX modernisation) and NM India (N-Gage hosting, Phase-1 data foundation proposal).</li>
+            <li>Built and launched AgentCORE, the company's MLOps platform; govern costs across AWS, Azure and GCP.</li>
+            <li>Technical lead for AWS, Red Hat and SUSE partnerships; pre-sales, RFPs and solution architecture.</li>
+            <li>Microsoft 365 administration and tenant migration; incident response on a compromised UAT server.</li>
+          </ul>
         </div>
       </div>
-      <div class="term" aria-label="Sample scanner output">
-        <div class="term-h"><i></i><i></i><i></i><span>finops-scan — zsh</span></div>
-        <pre id="term"></pre>
+      <div class="entry">
+        <div class="when"><span class="ver old">v2</span><br>May 2022 → Nov 2024<span class="hash">Gurgaon</span></div>
+        <div>
+          <h3>Platform DevOps &amp; MLOps Engineer</h3>
+          <div class="org">Podtech</div>
+          <ul>
+            <li>LifeSafety.AI: end-to-end MLOps; 80% less manual work, 25% faster GPU training.</li>
+            <li>Yondr DCIM: Azure DevOps migration (40% faster CI/CD), Docker and Kubernetes (deploys 50% faster).</li>
+            <li>PRTG and Grafana monitoring cut downtime 30% and held 99.9% uptime; SonarQube gates cut tech debt 20%.</li>
+          </ul>
+        </div>
       </div>
-      <div class="illus">Illustrative output — sample figures, not client data.</div>
-    </article>
-
-    <div class="pgrid">
-      <div class="pc reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1h1a3 3 0 0 1 0 6h-1v1a4 4 0 0 1-8 0v-1H7a3 3 0 0 1 0-6h1V6a4 4 0 0 1 4-4z"/></svg></div>
-        <h4>AgentCORE MLOps Platform</h4>
-        <p>CoreOps.ai's internal platform for shipping AI agents — containerised model serving, CI/CD for models and prompts, and cost guardrails across clouds.</p>
-        <ul class="pills"><li>Kubernetes</li><li>MLOps</li><li>CI/CD</li></ul>
+      <div class="entry">
+        <div class="when"><span class="ver old">v1</span><br>Jun 2019 → May 2022<span class="hash">Jaipur</span></div>
+        <div>
+          <h3>DevOps &amp; Cloud Engineer (Linux / Cloud Admin)</h3>
+          <div class="org">Global IT Providers</div>
+          <ul>
+            <li>Led the SOC 2 effort by fixing 500+ security vulnerabilities.</li>
+            <li>Ran AWS infrastructure: EC2, ELB, S3, IAM, Route 53, WAF, KMS, RDS, VPC.</li>
+            <li>Automated deployments, backups and log rotation with Bash and Python; hardened Apache, Nginx and IIS.</li>
+          </ul>
+        </div>
       </div>
-      <div class="pc reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></div>
-        <h4>LifeSafety.AI GPU Pipelines</h4>
-        <p>End-to-end MLOps for computer-vision safety models — automated data, training and deployment that removed 80% of manual work and got 25% more out of GPUs.</p>
-        <ul class="pills"><li>GPU</li><li>Docker</li><li>MLOps</li></ul>
+      <div class="entry">
+        <div class="when"><span class="ver old">init</span><br>2012 → 2016<span class="hash">Rajasthan</span></div>
+        <div>
+          <h3>B.Tech, Electronics &amp; Communication Engineering</h3>
+          <div class="org">Rajasthan Technical University</div>
+        </div>
       </div>
-      <div class="pc reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="6" rx="1"/><rect x="2" y="15" width="20" height="6" rx="1"/><path d="M6 6h.01M6 18h.01"/></svg></div>
-        <h4>Yondr DCIM Platform</h4>
-        <p>Delivery platform for a hyperscale data-centre operator's DCIM software — Azure DevOps pipelines, containerised releases and 99.9% uptime.</p>
-        <ul class="pills"><li>Azure DevOps</li><li>Docker</li><li>SonarQube</li></ul>
-      </div>
-      <a class="pc reveal" href="https://github.com/kuldeep-devops01/kuldeep-devops01.github.io" target="_blank" rel="noopener">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div>
-        <h4>This website ↗</h4>
-        <p>Hand-written HTML, CSS and JS — no framework, self-hosted fonts, perfect for crawlers, deployed on GitHub Pages. Source is public.</p>
-        <ul class="pills"><li>HTML/CSS</li><li>GitHub Pages</li></ul>
-      </a>
     </div>
   </section>
 
-  <section id="github">
-    <h2 class="sh"><span><span class="n">05.</span>GitHub</span></h2>
-    <a class="gh-head reveal" href="https://github.com/kuldeep-devops01" target="_blank" rel="noopener">
-      <img id="gh-av" src="https://avatars.githubusercontent.com/kuldeep-devops01" alt="" width="52" height="52" loading="lazy">
-      <div class="who"><b>@kuldeep-devops01</b><span id="gh-stats">github.com/kuldeep-devops01</span></div>
-      <span class="btn">Follow ↗</span>
-    </a>
-    <div class="repos" id="repos">
-      <a class="repo" href="https://github.com/kuldeep-devops01/kuldeep-devops01.github.io" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 0 1-1.06 1.06A2.5 2.5 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.5 2.5 0 0 1 4.5 9h8Z"/></svg>kuldeep-devops01.github.io<span class="vis">Public</span></div>
-        <p>Source for this portfolio — static, fast and crawler-friendly.</p>
-        <div class="meta"><span class="lang">HTML</span></div>
-      </a>
+  <section id="stack">
+    <div class="shead reveal"><span class="path">~/kubectl get services</span><h2>Stack</h2></div>
+    <div class="stack">
+      <div class="svc reveal"><h3>Cloud</h3><div class="chips"><span>AWS</span><span>Azure</span><span>GCP</span><span>Cloudflare</span><span>Bedrock</span></div></div>
+      <div class="svc reveal"><h3>Containers</h3><div class="chips"><span>Kubernetes</span><span>AKS</span><span>Helm</span><span>Docker</span><span>HPA &amp; autoscaling</span><span>StatefulSets</span></div></div>
+      <div class="svc reveal"><h3>CI/CD</h3><div class="chips"><span>Jenkins</span><span>Azure DevOps</span><span>GitHub</span><span>Bitbucket</span><span>SonarQube</span><span>Terraform</span></div></div>
+      <div class="svc reveal"><h3>MLOps &amp; AI</h3><div class="chips"><span>Model pipelines</span><span>NVIDIA multi-GPU</span><span>Claude</span><span>LLM platforms</span></div></div>
+      <div class="svc reveal"><h3>Streaming &amp; data</h3><div class="chips"><span>Apache Pulsar</span><span>MySQL</span><span>MongoDB</span><span>SQL Server</span><span>Data Factory</span></div></div>
+      <div class="svc reveal"><h3>Observability</h3><div class="chips"><span>Prometheus</span><span>Grafana</span><span>CloudWatch</span><span>Sumo Logic</span><span>PRTG</span><span>Kibana</span></div></div>
+      <div class="svc reveal"><h3>Security</h3><div class="chips"><span>SOC 2</span><span>Incident response</span><span>CyberArk</span><span>FortiGate</span><span>TLS · JWT</span></div></div>
+      <div class="svc reveal"><h3>FinOps &amp; platforms</h3><div class="chips"><span>Rightsizing</span><span>Savings Plans</span><span>Budgets</span><span>Microsoft 365</span><span>Linux</span></div></div>
     </div>
-    <p class="gh-note">Repos load live from the GitHub API. Most of my production work lives in private client repositories.</p>
-  </section>
-
-  <section id="skills">
-    <h2 class="sh"><span><span class="n">06.</span>Toolbox</span></h2>
-    <dl class="stack reveal">
-      <div class="row"><dt>Cloud</dt><dd><ul class="pills"><li>AWS</li><li>Azure</li><li>Oracle</li><li>Cost Explorer / FinOps</li></ul></dd></div>
-      <div class="row"><dt>Containers</dt><dd><ul class="pills"><li>Kubernetes (CKA)</li><li>AKS</li><li>Docker</li><li>Helm</li></ul></dd></div>
-      <div class="row"><dt>Delivery & IaC</dt><dd><ul class="pills"><li>Terraform</li><li>Azure DevOps</li><li>Jenkins</li><li>SonarQube</li></ul></dd></div>
-      <div class="row"><dt>Data & streaming</dt><dd><ul class="pills"><li>Apache Pulsar</li><li>Azure Data Factory</li><li>SQL Server</li><li>MongoDB</li></ul></dd></div>
-      <div class="row"><dt>AI & MLOps</dt><dd><ul class="pills"><li>GPU training pipelines</li><li>Model serving</li><li>Claude / LLM agents</li></ul></dd></div>
-      <div class="row"><dt>Observability & Sec</dt><dd><ul class="pills"><li>Prometheus</li><li>Grafana</li><li>SOC 2</li><li>Incident response</li><li>M365 admin</li></ul></dd></div>
-    </dl>
   </section>
 
   <section id="certs">
-    <h2 class="sh"><span><span class="n">07.</span>Certifications</span></h2>
+    <div class="shead reveal"><span class="path">~/openssl x509 -noout -dates</span><h2>Certifications</h2><p>Valid and current.</p></div>
     <div class="certs">
-      <div class="cert reveal"><div class="sq" style="background:#1e3a8a33;color:#93c5fd">CKA</div><div><b>Certified Kubernetes Administrator</b><span>CNCF · valid to Jan 2027</span></div></div>
-      <div class="cert reveal"><div class="sq" style="background:#f59e0b22;color:#fbbf24">AWS</div><div><b>AWS Solutions Architect – Associate</b><span>Amazon Web Services · valid to May 2028</span></div></div>
-      <div class="cert reveal"><div class="sq" style="background:#d9775722;color:#f0a58a">AI</div><div><b>Claude Certified Architect – Foundations</b><span>Anthropic · valid to Aug 2027</span></div></div>
-      <div class="cert reveal"><div class="sq" style="background:#f59e0b22;color:#fbbf24">APN</div><div><b>AWS Partner Technical Accredited</b><span>AWS Partner Network · 2026</span></div></div>
-      <div class="cert reveal"><div class="sq" style="background:#ef444422;color:#fca5a5">RH</div><div><b>Red Hat Partner — Ready tier</b><span>Red Hat Partner Program · 2026</span></div></div>
-      <div class="cert reveal"><div class="sq" style="background:#5eead422;color:#5eead4">B.T</div><div><b>B.Tech, Electronics & Communication</b><span>Rajasthan Technical University · 2016</span></div></div>
+      <div class="cert reveal" data-start="2025-01-05" data-end="2027-01-05"><span class="lock">VALID</span><h3>Certified Kubernetes Administrator (CKA)</h3><span class="k">issuer </span><span class="v">The Linux Foundation · CNCF</span><br><span class="k">valid  </span><span class="v">Jan 2025 → Jan 2027</span><div class="ttl"><i></i></div><div class="left"></div></div>
+      <div class="cert reveal" data-start="2025-05-17" data-end="2028-05-17"><span class="lock">VALID</span><h3>AWS Certified Solutions Architect – Associate</h3><span class="k">issuer </span><span class="v">Amazon Web Services</span><br><span class="k">valid  </span><span class="v">May 2025 → May 2028</span><div class="ttl"><i></i></div><div class="left"></div></div>
+      <div class="cert reveal" data-start="2025-08-01" data-end="2027-08-31"><span class="lock">VALID</span><h3>Claude Certified Architect – Foundations</h3><span class="k">issuer </span><span class="v">Anthropic</span><br><span class="k">valid  </span><span class="v">to Aug 2027</span><div class="ttl"><i></i></div><div class="left"></div></div>
+      <div class="cert reveal"><span class="lock">2026</span><h3>AWS Partner: Technical Accredited</h3><span class="k">issuer </span><span class="v">AWS Partner Network</span><br><span class="k">scope  </span><span class="v">partner technical accreditation</span></div>
+      <div class="cert reveal"><span class="lock">2026</span><h3>Red Hat Partner Program</h3><span class="k">issuer </span><span class="v">Red Hat</span><br><span class="k">tier   </span><span class="v">Ready</span></div>
+      <div class="cert reveal"><span class="lock">B.TECH</span><h3>Electronics &amp; Communication</h3><span class="k">issuer </span><span class="v">Rajasthan Technical University</span><br><span class="k">year   </span><span class="v">2016</span></div>
     </div>
   </section>
 
-  <section id="contact" style="margin-bottom:0">
-    <div class="contact reveal">
-      <div class="eyebrow" style="color:var(--acc)">// what's next</div>
-      <h2 style="margin-top:12px">Need someone to make your platform fast, reliable and cheaper?</h2>
-      <p>I'm open to remote DevOps, platform and MLOps roles with teams in India or abroad, and to relocating to the UAE. The quickest way to reach me is email.</p>
-      <div class="links">
-        <a class="btn solid" href="mailto:rathorethechamp@gmail.com">Say hello ↗</a>
-        <button class="btn" id="copy" type="button">Copy email</button>
-        <a class="btn" href="https://www.linkedin.com/in/kuldeep-devops/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  <section id="contact">
+    <div class="contact">
+      <div class="ctext reveal">
+        <div class="shead" style="margin-bottom:0"><span class="path">~/contact</span></div>
+        <h2>Open to remote roles and contract work</h2>
+        <p>DevOps, platform and MLOps roles: full-time remote, contracts, or relocation to the UAE. One-month notice.</p>
+        <div class="avail">
+          <div>Remote, India or international teams</div>
+          <div>Contracts and consulting engagements</div>
+          <div>On-site or hybrid in Dubai / Abu Dhabi</div>
+        </div>
+      </div>
+      <div class="term reveal" aria-label="Contact details">
+        <div class="chead"><span class="lights"><i></i><i></i><i></i></span><span>kuldeep@prod: ~/contact</span></div>
+        <div class="body" id="termBody">
+          <div><span class="p">$</span> <span class="c">kubectl describe engineer kuldeep</span></div>
+          <div class="o">Name:      <span class="c">Kuldeep Singh Rathore</span></div>
+          <div class="o">Role:      <span class="c">DevOps Lead · Platform &amp; MLOps</span></div>
+          <div class="o">Location:  <span class="c">New Delhi, India (UTC+5:30)</span></div>
+          <div class="o">Email:     <a href="mailto:rathorethechamp@gmail.com">rathorethechamp@gmail.com</a></div>
+          <div class="o">LinkedIn:  <a href="https://www.linkedin.com/in/kuldeep-devops/" target="_blank" rel="noopener">in/kuldeep-devops</a></div>
+          <div class="o">GitHub:    <a href="https://github.com/kuldeep-devops01" target="_blank" rel="noopener">kuldeep-devops01</a></div>
+          <div class="o">Status:    <span style="color:var(--ok)">Ready</span> <span class="h">(accepting conversations)</span></div>
+          <div><span class="p">$</span> <span class="cursor"></span></div>
+        </div>
+        <div class="tactions">
+          <button class="btn primary" id="copyEmail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copy email</button>
+          <a class="btn" href="mailto:rathorethechamp@gmail.com">Send email</a>
+          <a class="btn" href="Kuldeep_Singh_Rathore_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+        </div>
       </div>
     </div>
-    <footer>Designed and hand-coded by Kuldeep. Layout inspired by <a href="https://brittanychiang.com" target="_blank" rel="noopener">Brittany Chiang</a>. Set in Inter and JetBrains Mono, hosted on <a href="https://github.com/kuldeep-devops01/kuldeep-devops01.github.io" target="_blank" rel="noopener">GitHub Pages</a>.</footer>
   </section>
-</main>
 </div>
-<div class="toast" id="toast">Email copied</div>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Kuldeep Singh Rathore · DevOps Lead · Platform &amp; MLOps Engineer</span><span><a href="#top">↑ back to top</a> · press <b>Ctrl K</b> to jump</span></div></footer>
+
+<div class="pal" id="pal" hidden role="dialog" aria-modal="true" aria-label="Command menu">
+  <div class="pbox"><input id="palInput" placeholder="Type a command or section…" autocomplete="off" aria-label="Search commands"><div class="plist" id="palList" role="listbox"></div></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
 
 <script>
+document.documentElement.classList.add("js");
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* uptime since Jun 2019 */
+(function(){const s=new Date("2019-06-01T09:00:00+05:30"),el=document.getElementById("uptime");
+ function tick(){const n=new Date();let m=(n.getFullYear()-s.getFullYear())*12+n.getMonth()-s.getMonth();if(n.getDate()<s.getDate())m--;const y=Math.floor(m/12),mo=m%12;
+  const anchor=new Date(s);anchor.setMonth(s.getMonth()+m);let d=Math.floor((n-anchor)/864e5);const rem=(n-anchor)%864e5;
+  const h=String(Math.floor(rem/36e5)).padStart(2,"0"),mi=String(Math.floor(rem%36e5/6e4)).padStart(2,"0"),se=String(Math.floor(rem%6e4/1e3)).padStart(2,"0");
+  el.textContent=`${y}y ${mo}m ${d}d ${h}:${mi}:${se}`}
+ tick();if(!reduce)setInterval(tick,1000)})();
+
+/* cert validity bars */
+document.querySelectorAll(".cert[data-end]").forEach(c=>{const a=new Date(c.dataset.start),b=new Date(c.dataset.end),n=new Date();
+ const left=Math.max(0,Math.round((b-n)/864e5)),pct=Math.max(2,Math.min(100,(b-n)/(b-a)*100));
+ c.querySelector(".ttl i").style.width=pct+"%";c.querySelector(".left").textContent=`expires in ${left.toLocaleString()} days`;});
+
+/* reveal + bars */
+const bars=()=>document.querySelectorAll("#bars .fill").forEach(f=>{f.style.width=(Math.max(1.2,f.dataset.v/900*100))+"%"});
+if("IntersectionObserver" in window && !reduce){
+ const els=[...document.querySelectorAll(".reveal")];
+ els.forEach(e=>{const r=e.getBoundingClientRect();if(r.top>innerHeight)e.classList.add("pre")});
+ const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.remove("pre");io.unobserve(x.target)}}),{rootMargin:"0px 0px -8% 0px"});
+ els.forEach(e=>io.observe(e));
+ const bo=new IntersectionObserver(es=>{if(es.some(x=>x.isIntersecting)){bars();bo.disconnect()}},{threshold:.3});bo.observe(document.getElementById("bars"));
+}else bars();
+
+/* toast + copy */
+function toast(t){const el=document.getElementById("toast");el.textContent=t;el.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove("on"),1800)}
+async function copyEmail(){try{await navigator.clipboard.writeText("rathorethechamp@gmail.com");toast("Email copied")}catch(e){location.href="mailto:rathorethechamp@gmail.com"}}
+document.getElementById("copyEmail").addEventListener("click",copyEmail);
+
+/* command palette */
+const cmds=[["About","#about","section"],["Selected work","#work","section"],["EY DigiGST case study","#work","case"],["Partnerships & pre-sales","#partners","section"],["Experience","#log","section"],["Stack","#stack","section"],["Certifications","#certs","section"],["Contact","#contact","section"],
+ ["Download résumé (PDF)","Kuldeep_Singh_Rathore_Resume.pdf","open"],["Copy email address",copyEmail,"action"],["Open LinkedIn","https://www.linkedin.com/in/kuldeep-devops/","open"],["Open GitHub","https://github.com/kuldeep-devops01","open"]];
+const pal=document.getElementById("pal"),pin=document.getElementById("palInput"),plist=document.getElementById("palList");let sel=0,view=cmds;
+function drawPal(){const q=pin.value.toLowerCase().trim();view=cmds.filter(c=>c[0].toLowerCase().includes(q));sel=Math.min(sel,Math.max(0,view.length-1));
+ plist.innerHTML=view.map((c,i)=>`<div class="pitem" role="option" data-i="${i}" aria-selected="${i===sel}">${c[0]}<span>${c[2]}</span></div>`).join("")||`<div class="pitem">No match<span>esc</span></div>`}
+function openPal(){pal.hidden=false;pin.value="";sel=0;drawPal();pin.focus()}
+function closePal(){pal.hidden=true}
+function run(c){closePal();if(!c)return;const t=c[1];if(typeof t==="function")t();else if(t.startsWith("#"))document.querySelector(t).scrollIntoView({behavior:reduce?"auto":"smooth"});else window.open(t,"_blank","noopener")}
+document.getElementById("openPal").addEventListener("click",openPal);
+addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();pal.hidden?openPal():closePal()}
+ else if(!pal.hidden){if(e.key==="Escape")closePal();else if(e.key==="ArrowDown"){sel=Math.min(view.length-1,sel+1);drawPal();e.preventDefault()}else if(e.key==="ArrowUp"){sel=Math.max(0,sel-1);drawPal();e.preventDefault()}else if(e.key==="Enter")run(view[sel])}});
+pin.addEventListener("input",()=>{sel=0;drawPal()});
+plist.addEventListener("click",e=>{const it=e.target.closest("[data-i]");if(it)run(view[+it.dataset.i])});
+pal.addEventListener("click",e=>{if(e.target===pal)closePal()});
+
+/* cluster canvas */
 (function(){
-  var spot=document.getElementById('spot');
-  if(matchMedia('(pointer:fine)').matches){
-    addEventListener('pointermove',function(e){spot.style.background='radial-gradient(600px at '+e.clientX+'px '+e.clientY+'px, rgba(29,78,216,.14), transparent 80%)';});
-  }
-  // typed role
-  var words=['platform engineering','Kubernetes at scale','MLOps pipelines','FinOps & cost control','cloud architecture'],el=document.getElementById('typed'),wi=0,ci=words[0].length,del=true;
-  function tick(){var w=words[wi];if(del){ci--;if(ci<=0){del=false;wi=(wi+1)%words.length;}}else{ci++;if(ci>=words[wi].length){del=true;el.textContent=words[wi];return setTimeout(tick,2200);}}el.textContent=words[wi].slice(0,Math.max(ci,0));setTimeout(tick,del?35:70);}
-  setTimeout(tick,2600);
-  // clock
-  var ck=document.getElementById('clock');function clk(){try{ck.textContent=new Date().toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit'})}catch(e){}}clk();setInterval(clk,30000);
-  // reveal + counters + bars
-  function count(n){var t=+n.dataset.count,d=+(n.dataset.dec||0),s=performance.now();(function f(now){var p=Math.min((now-s)/1400,1),e=1-Math.pow(1-p,3);n.textContent=(t*e).toFixed(d);if(p<1)requestAnimationFrame(f)})(s);}
-  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;x.target.classList.add('in');x.target.querySelectorAll('[data-count]').forEach(count);io.unobserve(x.target);});},{threshold:.15});
-  document.querySelectorAll('.reveal').forEach(function(n){io.observe(n)});
-  var bars=document.getElementById('bars');new IntersectionObserver(function(es,o){if(es[0].isIntersecting){bars.querySelectorAll('.fill').forEach(function(f){f.style.width=f.dataset.w+'%'});o.disconnect();}},{threshold:.4}).observe(bars);
-  // active nav
-  var links=[].slice.call(document.querySelectorAll('.nav a'));
-  var so=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
-  document.querySelectorAll('main section').forEach(function(s){so.observe(s)});
-  // terminal
-  var L=[
-   ['<span class="c">$</span> <span class="w">finops scan --accounts all --regions all</span>',400],
-   ['<span class="m">→ assuming read-only role in 2 accounts · 17 regions</span>',500],
-   ['<span class="m">→ inventory: 1,284 resources · pulling 30d Cost Explorer data</span>',700],
-   ['',100],
-   ['<span class="y">▲</span> idle EC2 (CPU &lt;5% for 14d)        <span class="w">9</span>   <span class="c">$412/mo</span>',250],
-   ['<span class="y">▲</span> unattached EBS volumes             <span class="w">23</span>  <span class="c">$186/mo</span>',250],
-   ['<span class="y">▲</span> snapshots older than 180d          <span class="w">141</span> <span class="c">$97/mo</span>',250],
-   ['<span class="y">▲</span> idle load balancers                <span class="w">4</span>   <span class="c">$74/mo</span>',250],
-   ['<span class="r">●</span> oversized RDS (rightsizing)        <span class="w">3</span>   <span class="c">$538/mo</span>',250],
-   ['<span class="y">▲</span> unused Elastic IPs                 <span class="w">6</span>   <span class="c">$22/mo</span>',250],
-   ['',100],
-   ['<span class="c">✓</span> potential savings <span class="w">$1,329/mo · ~31%</span> of scanned spend',300],
-   ['<span class="c">✓</span> report → <span class="w">savings-report.html</span>, findings.csv',0]
-  ];
-  var term=document.getElementById('term'),started=false;
-  function runTerm(){if(started)return;started=true;var i=0,out='';(function nx(){if(i>=L.length){setTimeout(function(){term.innerHTML='';out='';i=0;nx();},7000);return;}out+=L[i][0]+'\n';term.innerHTML=out+'<span class="caret" style="height:14px;width:7px"></span>';setTimeout(nx,L[i][1]||600);i++;})();}
-  new IntersectionObserver(function(es,o){if(es[0].isIntersecting){runTerm();o.disconnect();}},{threshold:.3}).observe(term);
-  // github live
-  var LC={Python:'#3572A5',HTML:'#e34c26',JavaScript:'#f1e05a',TypeScript:'#3178c6',Shell:'#89e051',HCL:'#844FBA',Go:'#00ADD8',Dockerfile:'#384d54'};
-  function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  fetch('https://api.github.com/users/kuldeep-devops01').then(function(r){return r.ok?r.json():null}).then(function(u){if(u)document.getElementById('gh-stats').textContent=u.public_repos+' public repos · '+u.followers+' followers · since '+new Date(u.created_at).getFullYear();}).catch(function(){});
-  fetch('https://api.github.com/users/kuldeep-devops01/repos?sort=pushed&per_page=6').then(function(r){return r.ok?r.json():null}).then(function(rs){
-    if(!rs||!rs.length)return;
-    document.getElementById('repos').innerHTML=rs.filter(function(r){return !r.fork}).map(function(r){
-      return '<a class="repo" href="'+esc(r.html_url)+'" target="_blank" rel="noopener"><div class="rn"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 0 1-1.06 1.06A2.5 2.5 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.5 2.5 0 0 1 4.5 9h8Z"/></svg>'+esc(r.name)+'<span class="vis">Public</span></div><p>'+esc(r.description||'Source for this portfolio — static, fast and crawler-friendly.')+'</p><div class="meta">'+(r.language?'<span class="lang" style="--lc:'+(LC[r.language]||'#94a3b8')+'">'+esc(r.language)+'</span>':'')+'<span>★ '+r.stargazers_count+'</span><span>updated '+new Date(r.pushed_at).toLocaleDateString('en-GB',{month:'short',year:'numeric'})+'</span></div></a>';
-    }).join('');
-  }).catch(function(){});
-  // copy email
-  var t=document.getElementById('toast');
-  document.getElementById('copy').addEventListener('click',function(){var m='rathorethechamp@gmail.com';(navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).then(function(){t.textContent='Email copied'},function(){t.textContent=m}).then(function(){t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1800)});});
+ const cv=document.getElementById("cluster"),ctx=cv.getContext("2d");let W,H,dpr,pools=[],packets=[],t0=performance.now();
+ const C={line:"#24365a",pod:"#2a4a70",podOn:"#5cc8ff",amber:"#ffb547",ok:"#42d392",violet:"#a78bfa",text:"#8fa0b8",dim:"#5f7190"};
+ const defs=[{name:"pulsar-pool · statefulsets",color:C.amber,f:.8},{name:"app-pool · hpa",color:C.podOn,f:.92},{name:"gpu-pool · ml",color:C.violet,f:.5}];
+ function layout(){dpr=Math.min(2,devicePixelRatio||1);const r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+  const left=Math.max(92,W*.24),pw=W-left-18,gap=12,ph=(H-28-gap*2)/3;
+  pools=defs.map((d,i)=>{const x=left,y=14+i*(ph+gap),cols=Math.max(4,Math.floor((pw-24)/26)),rows=Math.max(1,Math.floor((ph-38)/22)),pods=[],n=Math.round(cols*rows*d.f);
+   for(let k=0;k<n;k++){const cx=x+16+(k%cols)*26,cy=y+30+Math.floor(k/cols)*22;pods.push({x:cx,y:cy,on:Math.random()<.85,p:Math.random()*6})}
+   return {...d,x,y,w:pw,h:ph,pods}});}
+ function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
+ function spawn(){const p=pools[Math.random()<.45?0:Math.random()<.7?1:2],tgt=p.pods[Math.floor(Math.random()*p.pods.length)];if(!tgt)return;
+  packets.push({sx:30,sy:H/2,tx:tgt.x+8,ty:tgt.y+7,mx:(30+p.x)/2,my:p.y+p.h/2,t:0,sp:.006+Math.random()*.008,c:p.color,tgt})}
+ function frame(now){const time=(now-t0)/1000;ctx.clearRect(0,0,W,H);
+  // ingress node
+  ctx.fillStyle="#0e1726";ctx.strokeStyle=C.line;ctx.lineWidth=1;rr(10,H/2-26,40,52,8);ctx.fill();ctx.stroke();
+  ctx.fillStyle=C.ok;ctx.beginPath();ctx.arc(30,H/2,5+Math.sin(time*3)*1.2,0,7);ctx.fill();
+  ctx.fillStyle=C.dim;ctx.font="10px 'Geist Mono',monospace";ctx.textAlign="center";ctx.fillText("ingress",30,H/2+42);ctx.textAlign="left";
+  pools.forEach(p=>{ctx.strokeStyle=C.line;ctx.setLineDash([3,4]);ctx.beginPath();ctx.moveTo(50,H/2);ctx.bezierCurveTo((50+p.x)/2,H/2,(50+p.x)/2,p.y+p.h/2,p.x,p.y+p.h/2);ctx.stroke();ctx.setLineDash([]);
+   ctx.fillStyle="rgba(14,23,38,.9)";rr(p.x,p.y,p.w,p.h,10);ctx.fill();ctx.stroke();
+   ctx.fillStyle=C.text;ctx.font="11px 'Geist Mono',monospace";ctx.fillText(p.name,p.x+12,p.y+18);
+   ctx.fillStyle=p.color;ctx.fillRect(p.x+p.w-34,p.y+12,6,6);ctx.fillStyle=C.dim;ctx.fillText("ok",p.x+p.w-24,p.y+18);
+   p.pods.forEach(d=>{const glow=d.on?(.55+.45*Math.max(0,Math.sin(time*1.6+d.p))):0;ctx.fillStyle=d.on?p.color:C.pod;ctx.globalAlpha=d.on?.35+glow*.65:.6;rr(d.x,d.y,16,14,3);ctx.fill();ctx.globalAlpha=1;
+    if(d.hit>0){ctx.strokeStyle=p.color;ctx.globalAlpha=d.hit;rr(d.x-3,d.y-3,22,20,5);ctx.stroke();ctx.globalAlpha=1;d.hit-=.04}});});
+  packets=packets.filter(k=>{k.t+=k.sp*(reduce?0:1.6);if(k.t>=1){k.tgt.hit=1;return false}const u=1-k.t;
+   const x=u*u*k.sx+2*u*k.t*k.mx+k.t*k.t*k.tx,y=u*u*k.sy+2*u*k.t*k.my+k.t*k.t*k.ty;ctx.fillStyle=k.c;ctx.shadowColor=k.c;ctx.shadowBlur=8;ctx.beginPath();ctx.arc(x,y,2.2,0,7);ctx.fill();ctx.shadowBlur=0;return true});
+  if(!reduce){if(Math.random()<.5)spawn();if(Math.random()<.004){const p=pools[1],d=p.pods[Math.floor(Math.random()*p.pods.length)];if(d)d.on=!d.on}requestAnimationFrame(frame)}}
+ layout();addEventListener("resize",()=>{layout();if(reduce){packets=[];for(let i=0;i<30;i++)spawn();packets.forEach(k=>k.t=Math.random()*.9);requestAnimationFrame(frame)}});
+ if(reduce){for(let i=0;i<30;i++)spawn();packets.forEach(k=>k.t=Math.random()*.9)}
+ requestAnimationFrame(frame);
 })();
 </script>
 </body>
